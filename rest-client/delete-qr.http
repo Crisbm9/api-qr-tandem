@@ -1,0 +1,7 @@
+DELETE http://tudominio.com/api/delete-qr.php
+Content-Type: application/json
+
+{
+    "id": 1
+}
+
