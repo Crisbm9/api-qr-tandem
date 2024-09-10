@@ -7,13 +7,14 @@ CREATE TABLE users (
     delegacion VARCHAR(100),
     email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
-    role ENUM('guest','employee', 'admin') DEFAULT 'employee',
+    image_url VARCHAR(255) DEFAULT 'avatar_default.jpg',
+    role ENUM('guest','employee', 'admin') DEFAULT 'guest',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 CREATE TABLE qr_codes (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    data VARCHAR(255) NOT NULL UNIQUE,
-    nombre_ref VARCHAR(255),
+    data VARCHAR(255) NOT NULL,
+    nombre_ref VARCHAR(255) NOT NULL UNIQUE,
     description TEXT,
     created_by INT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,

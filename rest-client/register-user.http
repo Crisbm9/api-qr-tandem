@@ -1,9 +1,44 @@
+###
 POST http://localhost/api-qr-tandem/v1/register-user.php
 Content-Type: "application/json"
 
 {
-  "nombre":"Gerente aplicacion",
-  "departamento":"El Escorial",
+  "nombre":"gerente",
+  "delegacion":"Aranjuez",
   "email":"gerente@gmail.com",
-  "password":"asdf"
+  "password":"gerente"
+}
+
+
+###
+POST http://localhost/api-qr-tandem/v1/register-user.php
+Content-Type: "application/json"
+
+{
+  "nombre":"empleado",
+  "delegacion":"Madrid",
+  "email":"empleado@gmail.com",
+  "password":"empleado"
+}
+
+###
+POST http://localhost/api-qr-tandem/v1/register-user.php
+Content-Type: "application/json"
+
+{
+  "nombre":"Invitado",
+  "delegacion":"El Escorial",
+  "email":"invitado@gmail.com",
+  "password":"invitado"
+}
+
+###
+POST http://localhost/api-qr-tandem/v1/register-user.php
+Content-Type: "application/json"
+
+{
+  "nombre":"lalala",
+  "delegacion":"Aranjuez",
+  "email":"lalala",
+  "password":"lalala"
 }

@@ -1,9 +1,32 @@
+
+### Modificar con todos los datos
 PUT http://localhost/api-qr-tandem/v1/update-user.php
-Content-Type: application/json
-Authorization: Bearer TU_TOKEN
+Content-Type: "application/json"
 
 {
-    "id": 2,
-    "email": "gerente@gmail.com",
-    "role": "admin"
+   "nombre": "lola",
+    "departamento": "Ibiza",
+    "email":"gerente@gmail.com"
 }
+### Modificar si falta algun campo
+PUT http://localhost/api-qr-tandem/v1/update-user.php
+Content-Type: "application/json"
+{
+    "email": "empleado@gmail.com",
+    "departamento":"employee"
+}
+### Modificar con los campo en blanco
+PUT http://localhost/api-qr-tandem/v1/update-user.php
+Content-Type: "application/json"
+{
+   "nombre": "",
+    "departamento": "",
+    "email":""
+}
+### El email correcto pero el resto en blanco
+PUT http://localhost/api-qr-tandem/v1/update-user.php
+Content-Type: "application/json"
+{
+   "nombre": "",
+    "departamento": "",
+    "email":"gerente@gmail.com"

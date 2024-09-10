@@ -1,7 +1,24 @@
-GET http://localhost/api-qr-tandem/v1/login-user.php
+POST  http://localhost/api-qr-tandem/v1/login-user.php
 Content-Type: "application/json"
 
 {
- "email": "juan.perez@example.com",
-"password": "password123"
+"email": "gerente@gmail.com",
+"password": "gerente"
+}
+
+###
+POST  http://localhost/api-qr-tandem/v1/login-user.php
+Content-Type: "application/json"
+
+{
+    "email": "empleado@gmail.com",
+    "password": "empleadp"
+}
+###
+POST  http://localhost/api-qr-tandem/v1/login-user.php
+Content-Type: "application/json"
+
+{
+    "email": "invitado@gmail.com",
+    "password": "invitado"
 }

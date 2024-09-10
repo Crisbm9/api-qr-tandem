@@ -1,4 +1,5 @@
 <?php
+require '../vendor/autoload.php';
 require '../config/database.php';
 require '../config/cors.php';
 

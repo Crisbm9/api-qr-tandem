@@ -1,4 +1,9 @@
 <?php
+header('Cache-Control: no-cache, no-store, must-revalidate'); 
+header('Pragma: no-cache'); 
+header('Expires: 0');
+require '../config/cors.php';
+require '../vendor/autoload.php';
 include "../config/database.php";
 $sql = "SELECT
     qr_codes.id AS qr_id,
@@ -8,7 +13,7 @@ $sql = "SELECT
     qr_codes.created_at AS qr_created_at,
     users.id AS user_id,
     users.nombre AS user_nombre,
-    users.departamento AS user_departamento,
+    users.delegacion AS user_delegacion,
     users.email AS user_email,
     users.role AS user_role
 FROM qr_codes

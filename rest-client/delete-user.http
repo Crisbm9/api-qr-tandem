@@ -3,5 +3,5 @@ Content-Type: application/json
 Authorization: Bearer TU_TOKEN
 
 {
-    "id": 2
+    "email": "hym@gmail.com"
 }

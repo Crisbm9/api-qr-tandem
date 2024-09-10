@@ -2,8 +2,8 @@ POST http://localhost/api-qr-tandem/v1/create-qr.php
 Content-Type: "application/json"
 
 {
-    "data": "mi mama e ghmima",
-    "nombre_ref": "nieghz",
-    "description": "frshje para niños",
-    "created_by": 1
+    "data": "referencia",
+    "nombre_ref": "referencia",
+    "description": "referencia",
+    "created_by": 3
 }

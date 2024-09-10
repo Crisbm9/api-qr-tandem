@@ -9,10 +9,10 @@ try {
     $input = json_decode(file_get_contents('php://input'), true);
 
     // Validar entrada
-    if (isset($input['nombre']) AND $input['nombre']!=""  && isset($input['email'])AND $input['email']!="" && isset($input['delegacion'])AND $input['delegacion']!="") {
-            $nombre = $input['nombre'];
-            $email = $input['email'];
-            $delegacion = $input['delegacion'];
+    if (isset($input['role']) && isset($input['email'])) {
+        $role = $input['role'];
+        $email = $input['email'];
+
         // Comprobar si el correo electrónico existe
         $checkEmailSql = "SELECT COUNT(*) FROM users WHERE email = ?";
         $checkStmt = $pdo->prepare($checkEmailSql);
@@ -23,19 +23,19 @@ try {
      
 
             // Preparar la consulta SQL para actualizar la contraseña
-            $sql = "UPDATE users SET nombre= ?, delegacion = ? WHERE email = ?";
+            $sql = "UPDATE users SET role = ? WHERE email = ?";
             $stmt = $pdo->prepare($sql);
-    
+
             // Ejecutar la consulta
-            if ($stmt->execute([$nombre, $delegacion, $email])) { // Cambiar $role a $hashedrole si hasheas
+            if ($stmt->execute([$role, $email])) { // Cambiar $role a $hashedrole si hasheas
                 header('Content-Type: application/json; charset=utf-8'); 
                 echo json_encode([
-                    'message' => "El usuario ha sido actualizado exitosamente",
+                    'message' => "El rol ha sido actualizado exitosamente a $role",
                     'email' => $email
                 ]);
             } else {
                 header('Content-Type: application/json; charset=utf-8'); 
-                echo json_encode(['message' => 'Error al actualizar el usuario']);
+                echo json_encode(['message' => 'Error al actualizar el rol del usuario']);
             }
         } else {
             // El correo electrónico no existe en la base de datos
@@ -52,4 +52,3 @@ try {
     echo json_encode(['message' => 'Error: ' . $e->getMessage()]);
 }
 ?>
-
